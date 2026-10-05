@@ -40,5 +40,41 @@ public class StatistikNilai {
 
         System.out.println();
         System.out.println("Nilai tersimpan : " + daftar);
+
+        // 3. Menghitung jumlah mahasiswa
+        int jumlah = daftar.size();
+
+        // 4. Menghitung total nilai untuk mencari rata-rata
+        int total = 0;
+
+        for (int nilai : daftar) {
+            total += nilai;
+        }
+
+        double rataRata = (double) total / jumlah;
+
+        // 5. Mencari nilai tertinggi dan terendah
+        // Menggunakan perulangan sendiri, bukan Collections.max/min
+        int tertinggi = daftar.get(0);
+        int terendah = daftar.get(0);
+
+        for (int i = 1; i < daftar.size(); i++) {
+            int nilai = daftar.get(i);
+
+            if (nilai > tertinggi) {
+                tertinggi = nilai;
+            }
+
+            if (nilai < terendah) {
+                terendah = nilai;
+            }
+        }
+
+        // 6. Menghitung jumlah mahasiswa yang nilainya di atas rata-rata
+        int diAtasRataRata = 0;
+
+        for (int nilai : daftar) {
+            if (nilai > rataRata) {
+                diAtasRataRata++;
     }
-}
+ }
